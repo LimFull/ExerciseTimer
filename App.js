@@ -14,8 +14,8 @@ const App = () => {
   return (
     <NavigationContainer>
       <Tab.Navigator>
-        <Tab.Screen name="Home" component={Home} />
-        <Tab.Screen name="Settings" component={Settings} />
+        <Tab.Screen name="타이머" component={Home} />
+        <Tab.Screen name="설정" component={Settings} />
       </Tab.Navigator>
     </NavigationContainer>
   );

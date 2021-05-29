@@ -1,6 +1,6 @@
 import React, {useRef, useState, useEffect, forwardRef} from 'react';
 import {View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
-import {getFormattedTime} from '../utils';
+import {getFormattedTime} from '@utils';
 
 const Timer = forwardRef((props, ref) => {
   const textInput = useRef();

@@ -1,8 +1,8 @@
 import React, {Component, useState, useRef} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
-import Timer from './components/Timer';
+import Timer from '@components/Timer';
 
-import SetTimeButton from './components/SetTimeButton';
+import SetTimeButton from '@components/SetTimeButton';
 import {getFormattedTime} from './utils';
 
 const Home = () => {

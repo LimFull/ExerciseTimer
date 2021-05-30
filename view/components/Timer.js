@@ -3,7 +3,6 @@ import {View, StyleSheet, TextInput, TouchableOpacity} from 'react-native';
 import {getFormattedTime} from '@utils';
 
 const Timer = forwardRef((props, ref) => {
-  const textInput = useRef();
   const [defaultValue, setDefaultValue] = useState(props.defaultTime);
 
   useEffect(() => {

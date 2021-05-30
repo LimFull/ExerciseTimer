@@ -11,6 +11,6 @@ export const getFormattedTime = milliSeconds => {
     ':' +
     String(secs).padStart(2, '0') +
     '.' +
-    String(ms).padStart(3, '0').substring(0, 2)
+    String(ms).padStart(3, '0').substring(0, 2).padEnd(2, '0')
   );
 };

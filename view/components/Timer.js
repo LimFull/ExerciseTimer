@@ -30,9 +30,10 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textInput: {
-    width: '80%',
+    width: '90%',
     color: 'white',
     fontSize: 80,
+    paddingLeft: 10,
   },
 });
 

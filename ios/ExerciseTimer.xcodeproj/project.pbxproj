@@ -14,7 +14,7 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B6562E5772D273916192F64B /* libPods-ExerciseTimer-ExerciseTimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50655240C2F5757898541252 /* libPods-ExerciseTimer-ExerciseTimerTests.a */; };
 		BFF564EF20A214D6682A8E30 /* libPods-ExerciseTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BCD820E81B9AE0AD3F50BB /* libPods-ExerciseTimer.a */; };
-		D3A41D282663386B00AA59DE /* beepbeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3A41D272663386B00AA59DE /* beepbeep.mp3 */; };
+		D3A41D2C2663397000AA59DE /* beepbeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3A41D2B2663397000AA59DE /* beepbeep.mp3 */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,7 +43,7 @@
 		50655240C2F5757898541252 /* libPods-ExerciseTimer-ExerciseTimerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExerciseTimer-ExerciseTimerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		700E2CCFE10F6D4EF05CCECC /* Pods-ExerciseTimer-ExerciseTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExerciseTimer-ExerciseTimerTests.release.xcconfig"; path = "Target Support Files/Pods-ExerciseTimer-ExerciseTimerTests/Pods-ExerciseTimer-ExerciseTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ExerciseTimer/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D3A41D272663386B00AA59DE /* beepbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beepbeep.mp3; path = ../../../ExerciseSupporter/assets/beepbeep.mp3; sourceTree = "<group>"; };
+		D3A41D2B2663397000AA59DE /* beepbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beepbeep.mp3; path = ../../assets/beepbeep.mp3; sourceTree = "<group>"; };
 		DD96791F974FA7F2272384AA /* Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-ExerciseTimer-ExerciseTimerTests/Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -154,7 +154,7 @@
 		D3A41D262663385800AA59DE /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				D3A41D272663386B00AA59DE /* beepbeep.mp3 */,
+				D3A41D2B2663397000AA59DE /* beepbeep.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -254,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				D3A41D282663386B00AA59DE /* beepbeep.mp3 in Resources */,
+				D3A41D2C2663397000AA59DE /* beepbeep.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

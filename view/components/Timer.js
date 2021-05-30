@@ -16,7 +16,7 @@ const Timer = forwardRef((props, ref) => {
         style={styles.textInput}
         defaultValue={getFormattedTime(defaultValue)}
         editable={false}
-        textAlign={'center'}
+        textAlign={'left'}
       />
     </View>
   );
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   textInput: {
-    width: '100%',
+    width: '80%',
     color: 'white',
     fontSize: 80,
   },

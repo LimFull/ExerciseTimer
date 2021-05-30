@@ -1,5 +1,11 @@
 import React, {Component, useState, useRef} from 'react';
-import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  ScrollView,
+} from 'react-native';
 import Timer from '@components/Timer';
 import Rep from '@components/Rep';
 
@@ -10,11 +16,14 @@ let interval;
 let pausedCurrentLeft = 0;
 
 const Home = () => {
+  const defaultRecord = [{rep: 1}, {rep: 2}, {rep: 3}, {rep: 4}];
+
   const [defaultTime, setDefaultTime] = useState(90000);
   const [isRunning, setIsRunning] = useState(false);
   const [isPause, setIsPause] = useState(false);
   const [currentLeft, setCurrentLeft] = useState(0);
   const [currentRep, setCurrentRep] = useState(1);
+  const [record, setRecord] = useState(defaultRecord);
   const textInput = useRef();
 
   const addRep = () => {
@@ -23,10 +32,28 @@ const Home = () => {
 
   const _onClear = () => {
     setCurrentRep(1);
+    setRecord(defaultRecord);
   };
 
   const _onStart = (textInput, defaultValue) => {
     const start = Date.now();
+    if (!isPause) {
+      const index = record.findIndex(r => r.rep === currentRep);
+      const tempRecord = record;
+      if (index === -1) {
+        tempRecord.push({
+          rep: currentRep,
+          time: getFormattedTime(defaultTime),
+        });
+      } else {
+        tempRecord[index] = {
+          rep: currentRep,
+          time: getFormattedTime(defaultTime),
+        };
+      }
+
+      setRecord(tempRecord);
+    }
 
     interval = setInterval(() => {
       const elapsed = Date.now() - start;
@@ -104,6 +131,33 @@ const Home = () => {
     );
   };
 
+  const renderScrollBox = () => {
+    const splitBar = () => <View style={styles.splitBar} />;
+
+    const data = (rep, time) => (
+      <View style={styles.scrollBoxData}>
+        <Text style={styles.scrollBoxRep}>{time ? `${rep} rep` : ''}</Text>
+        <Text style={styles.scrollBoxTime}>{time ? time : ''}</Text>
+      </View>
+    );
+
+    return (
+      <View style={styles.scrollContainer}>
+        <ScrollView style={{backgroundColor: 'black'}}>
+          {record.map((r, i) => {
+            return (
+              <View key={i}>
+                {splitBar()}
+                {data(r.rep, r.time)}
+              </View>
+            );
+          })}
+          {splitBar()}
+        </ScrollView>
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Rep number={currentRep} />
@@ -132,6 +186,7 @@ const Home = () => {
         {renderReset()}
         {renderStart()}
       </View>
+      {renderScrollBox()}
       {renderClear()}
     </View>
   );
@@ -179,11 +234,39 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     justifyContent: 'center',
     borderRadius: 30,
+    position: 'absolute',
+    bottom: 30,
   },
   clearButtonText: {
     fontSize: 20,
     color: 'white',
     textAlign: 'center',
+  },
+  scrollContainer: {
+    width: '80%',
+    height: 220,
+  },
+  splitBar: {
+    width: '100%',
+    height: 1,
+    backgroundColor: '#2b2b2b',
+  },
+  scrollBoxData: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  scrollBoxRep: {
+    height: 43,
+    padding: 5,
+    marginLeft: 5,
+    fontSize: 28,
+    color: 'white',
+  },
+  scrollBoxTime: {
+    padding: 5,
+    marginRight: 5,
+    fontSize: 28,
+    color: 'white',
   },
 });
 

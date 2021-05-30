@@ -8,6 +8,7 @@ import {
 } from 'react-native';
 import Timer from '@components/Timer';
 import Rep from '@components/Rep';
+import SoundPlayer, {SOUND_OBJECT} from '@utils/SoundPlayer';
 
 import SetTimeButton from '@components/SetTimeButton';
 import {getFormattedTime} from './utils';
@@ -62,6 +63,7 @@ const Home = () => {
       textInput.current.setNativeProps({text: getFormattedTime(left)});
       setCurrentLeft(left);
       if (left <= 0) {
+        SoundPlayer.playSound(SOUND_OBJECT.beepbeep);
         clearInterval(interval);
         textInput.current.setNativeProps({text: getFormattedTime(0)});
         setIsPause(false);

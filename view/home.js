@@ -40,16 +40,18 @@ const Home = () => {
   };
 
   const renderReset = () => {
+    const color =
+      isPause && !isRunning ? 'rgba(112, 128, 144, 0.5)' : 'rgba(0,0,0,0.5)';
     return (
       <TouchableOpacity
-        style={{...styles.bigButton, backgroundColor: 'blue'}}
+        style={{...styles.bigButton, backgroundColor: color}}
         onPress={() => {
           textInput.current.setNativeProps({
             text: getFormattedTime(defaultTime),
           });
           setIsPause(false);
         }}
-        disabled={!isPause}>
+        disabled={!isPause || isRunning}>
         <Text style={styles.bigButtonText}>{'재설정'}</Text>
       </TouchableOpacity>
     );
@@ -58,16 +60,16 @@ const Home = () => {
   const renderStart = () => {
     return isRunning ? (
       <TouchableOpacity
-        style={{...styles.bigButton, backgroundColor: 'pink'}}
+        style={{...styles.bigButton, backgroundColor: 'rgba(0,0,255,1)'}}
         onPress={() => {
           setIsRunning(false);
           _onStop();
         }}>
-        <Text style={styles.bigButtonText}>{'정지'}</Text>
+        <Text style={styles.bigButtonText}>{'일시 정지'}</Text>
       </TouchableOpacity>
     ) : (
       <TouchableOpacity
-        style={{...styles.bigButton, backgroundColor: 'pink'}}
+        style={{...styles.bigButton, backgroundColor: 'rgba(0,0,255,1)'}}
         onPress={() => {
           setIsRunning(true);
           _onStart(textInput, defaultTime);
@@ -79,6 +81,7 @@ const Home = () => {
 
   return (
     <View style={styles.container}>
+      <Timer ref={textInput} defaultTime={defaultTime} />
       <View style={styles.setTimeButtonsContainer}>
         <SetTimeButton
           time={90000}
@@ -99,8 +102,6 @@ const Home = () => {
           disabled={isRunning || isPause}
         />
       </View>
-      <Timer ref={textInput} defaultTime={defaultTime} />
-
       <View style={styles.bigButtonContainer}>
         {renderReset()}
         {renderStart()}
@@ -113,7 +114,7 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    backgroundColor: '#00BFFF',
+    backgroundColor: 'black',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -137,10 +138,13 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignContent: 'center',
     marginHorizontal: 10,
+    borderWidth: 2,
+    borderColor: 'gray',
   },
   bigButtonText: {
     textAlign: 'center',
     fontSize: 20,
+    color: 'white',
   },
 });
 

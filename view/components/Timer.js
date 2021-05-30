@@ -24,18 +24,15 @@ const Timer = forwardRef((props, ref) => {
 
 const styles = StyleSheet.create({
   container: {
-    width: '80%',
-    height: '10%',
-    backgroundColor: 'white',
+    width: '100%',
     borderRadius: 10,
     alignItems: 'center',
     justifyContent: 'center',
   },
   textInput: {
-    width: '80%',
-    height: '90%',
-    backgroundColor: 'red',
-    fontSize: 30,
+    width: '100%',
+    color: 'white',
+    fontSize: 80,
   },
 });
 

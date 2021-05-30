@@ -1,6 +1,7 @@
 import React, {Component, useState, useRef} from 'react';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import Timer from '@components/Timer';
+import Rep from '@components/Rep';
 
 import SetTimeButton from '@components/SetTimeButton';
 import {getFormattedTime} from './utils';
@@ -13,7 +14,16 @@ const Home = () => {
   const [isRunning, setIsRunning] = useState(false);
   const [isPause, setIsPause] = useState(false);
   const [currentLeft, setCurrentLeft] = useState(0);
+  const [currentRep, setCurrentRep] = useState(1);
   const textInput = useRef();
+
+  const addRep = () => {
+    setCurrentRep(currentRep + 1);
+  };
+
+  const _onClear = () => {
+    setCurrentRep(1);
+  };
 
   const _onStart = (textInput, defaultValue) => {
     const start = Date.now();
@@ -29,8 +39,9 @@ const Home = () => {
         textInput.current.setNativeProps({text: getFormattedTime(0)});
         setIsPause(false);
         setIsRunning(false);
+        addRep();
       }
-    }, 41);
+    }, 16);
   };
 
   const _onStop = () => {
@@ -72,6 +83,7 @@ const Home = () => {
         style={{...styles.bigButton, backgroundColor: 'rgba(0,0,255,1)'}}
         onPress={() => {
           setIsRunning(true);
+
           _onStart(textInput, defaultTime);
         }}>
         <Text style={styles.bigButtonText}>{'시작'}</Text>
@@ -79,8 +91,22 @@ const Home = () => {
     );
   };
 
+  const renderClear = () => {
+    return (
+      <TouchableOpacity
+        style={styles.clearButton}
+        disabled={isRunning}
+        onPress={() => {
+          _onClear();
+        }}>
+        <Text style={styles.clearButtonText}>초기화</Text>
+      </TouchableOpacity>
+    );
+  };
+
   return (
     <View style={styles.container}>
+      <Rep number={currentRep} />
       <Timer ref={textInput} defaultTime={defaultTime} />
       <View style={styles.setTimeButtonsContainer}>
         <SetTimeButton
@@ -106,6 +132,7 @@ const Home = () => {
         {renderReset()}
         {renderStart()}
       </View>
+      {renderClear()}
     </View>
   );
 };
@@ -145,6 +172,18 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     color: 'white',
+  },
+  clearButton: {
+    width: 250,
+    height: 45,
+    backgroundColor: 'red',
+    justifyContent: 'center',
+    borderRadius: 30,
+  },
+  clearButtonText: {
+    fontSize: 20,
+    color: 'white',
+    textAlign: 'center',
   },
 });
 

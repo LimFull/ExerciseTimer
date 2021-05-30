@@ -1,7 +1,7 @@
 import React from 'react';
 import {TouchableOpacity, Text} from 'react-native';
 
-const SetTimeButton = ({time, text, setDefaultTime}) => {
+const SetTimeButton = ({time, text, setDefaultTime, disabled}) => {
   return (
     <TouchableOpacity
       style={{
@@ -13,7 +13,8 @@ const SetTimeButton = ({time, text, setDefaultTime}) => {
       }}
       onPress={() => {
         setDefaultTime(time);
-      }}>
+      }}
+      disabled={disabled}>
       <Text>{`${text}`}</Text>
     </TouchableOpacity>
   );

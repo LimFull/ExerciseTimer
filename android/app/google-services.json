@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "509442345867",
+    "project_id": "exercisetimer-51be8",
+    "storage_bucket": "exercisetimer-51be8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:509442345867:android:8393878a97b5f3b561fd8e",
+        "android_client_info": {
+          "package_name": "com.fulllim.exercisetimer"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "509442345867-t7vpjud58mf51827edl4fv5alnaehusa.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fulllim.exercisetimer",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "509442345867-tr5065l90k54c8v36dl7sl219vt0jbi7.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA35NR3jn9_YQbpJtqVCsOyxfPKKBmS3xQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "509442345867-tr5065l90k54c8v36dl7sl219vt0jbi7.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

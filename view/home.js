@@ -14,6 +14,8 @@ import {useSelector, useDispatch, connect} from 'react-redux';
 import SetTimeButton from '@components/SetTimeButton';
 import {getFormattedTime, getStringTime} from './utils';
 
+import {BottomBannerAds} from './utils/Ads';
+
 let interval;
 let pausedCurrentLeft = 0;
 
@@ -126,14 +128,25 @@ const Home = () => {
 
   const renderClear = () => {
     return (
-      <TouchableOpacity
-        style={styles.clearButton}
-        disabled={isRunning}
-        onPress={() => {
-          _onClear();
+      <View
+        style={{
+          position: 'absolute',
+          flexDirection: 'column',
+          alignItems: 'center',
+          width: '100%',
+          bottom: 0,
         }}>
-        <Text style={styles.clearButtonText}>초기화</Text>
-      </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.clearButton}
+          disabled={isRunning}
+          onPress={() => {
+            _onClear();
+          }}>
+          <Text style={styles.clearButtonText}>초기화</Text>
+        </TouchableOpacity>
+
+        <BottomBannerAds />
+      </View>
     );
   };
 
@@ -204,7 +217,7 @@ const styles = StyleSheet.create({
     height: '100%',
     backgroundColor: 'black',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'flex-start',
   },
   setTimeButtonsContainer: {
     flexDirection: 'row',
@@ -240,8 +253,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'red',
     justifyContent: 'center',
     borderRadius: 30,
-    position: 'absolute',
-    bottom: 30,
+    marginBottom: 10,
   },
   clearButtonText: {
     fontSize: 20,

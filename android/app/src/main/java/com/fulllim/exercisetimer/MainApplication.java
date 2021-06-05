@@ -1,4 +1,4 @@
-package com.exercisetimer;
+package com.fulllim.exercisetimer;
 
 import android.app.Application;
 import android.content.Context;

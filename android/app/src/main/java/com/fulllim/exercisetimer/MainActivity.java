@@ -1,4 +1,4 @@
-package com.exercisetimer;
+package com.fulllim.exercisetimer;
 
 import com.facebook.react.ReactActivity;
 

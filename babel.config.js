@@ -9,6 +9,7 @@ module.exports = {
           '@view': 'ExerciseTimer/view',
           '@utils': 'ExerciseTimer/view/utils',
           '@components': 'ExerciseTimer/view/components',
+          '@store': 'ExerciseTimer/view/store',
         },
       },
     ],

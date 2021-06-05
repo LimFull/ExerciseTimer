@@ -9,14 +9,17 @@ import {
 import Timer from '@components/Timer';
 import Rep from '@components/Rep';
 import SoundPlayer, {SOUND_OBJECT} from '@utils/SoundPlayer';
+import {useSelector, useDispatch, connect} from 'react-redux';
+import {setTimes} from '@store/';
 
 import SetTimeButton from '@components/SetTimeButton';
-import {getFormattedTime} from './utils';
+import {getFormattedTime, getStringTime} from './utils';
 
 let interval;
 let pausedCurrentLeft = 0;
 
 const Home = () => {
+  const dispatch = useDispatch();
   const defaultRecord = [{rep: 1}, {rep: 2}, {rep: 3}, {rep: 4}];
 
   const [defaultTime, setDefaultTime] = useState(90000);
@@ -26,6 +29,8 @@ const Home = () => {
   const [currentRep, setCurrentRep] = useState(1);
   const [record, setRecord] = useState(defaultRecord);
   const textInput = useRef();
+
+  const {firstTime, secondTime, thirdTime} = useSelector(state => state);
 
   const addRep = () => {
     setCurrentRep(currentRep + 1);
@@ -166,19 +171,19 @@ const Home = () => {
       <Timer ref={textInput} defaultTime={defaultTime} />
       <View style={styles.setTimeButtonsContainer}>
         <SetTimeButton
-          time={90000}
-          text={'1분 30초'}
+          time={firstTime}
+          text={getStringTime(firstTime)}
           setDefaultTime={setDefaultTime}
           disabled={isRunning || isPause}
         />
         <SetTimeButton
-          time={180000}
-          text={'3분'}
+          time={secondTime}
+          text={getStringTime(secondTime)}
           setDefaultTime={setDefaultTime}
           disabled={isRunning || isPause}
         />
         <SetTimeButton
-          time={300000}
+          time={getStringTime(thirdTime)}
           text={'5분'}
           setDefaultTime={setDefaultTime}
           disabled={isRunning || isPause}
@@ -272,4 +277,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Home;
+export default connect()(Home);

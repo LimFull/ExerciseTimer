@@ -20,7 +20,6 @@ let interval;
 let pausedCurrentLeft = 0;
 
 const Home = () => {
-  const dispatch = useDispatch();
   const defaultRecord = [{rep: 1}, {rep: 2}, {rep: 3}, {rep: 4}];
 
   const [defaultTime, setDefaultTime] = useState(90000);
@@ -195,8 +194,8 @@ const Home = () => {
           disabled={isRunning || isPause}
         />
         <SetTimeButton
-          time={getStringTime(thirdTime)}
-          text={'5분'}
+          time={thirdTime}
+          text={getStringTime(thirdTime)}
           setDefaultTime={setDefaultTime}
           disabled={isRunning || isPause}
         />
@@ -288,4 +287,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default connect()(Home);
+export default Home;

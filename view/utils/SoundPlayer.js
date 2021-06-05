@@ -12,6 +12,8 @@ class SoundPlayer {
   }
 
   _init() {
+    Sound.setCategory('Playback');
+
     this.soundObjects.beepbeep = new Sound(
       beepbeep,
       Sound.MAIN_BUNDLE,

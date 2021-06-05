@@ -10,7 +10,6 @@ import Timer from '@components/Timer';
 import Rep from '@components/Rep';
 import SoundPlayer, {SOUND_OBJECT} from '@utils/SoundPlayer';
 import {useSelector, useDispatch, connect} from 'react-redux';
-import {setTimes} from '@store/';
 
 import SetTimeButton from '@components/SetTimeButton';
 import {getFormattedTime, getStringTime} from './utils';

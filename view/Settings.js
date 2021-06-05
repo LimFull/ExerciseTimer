@@ -1,5 +1,7 @@
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
+import {setTimes} from '@store';
+import {useSelector, useDispatch, connect} from 'react-redux';
 
 const Settings = () => {
   return (

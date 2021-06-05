@@ -18,7 +18,7 @@ const App = () => {
       <NavigationContainer>
         <Tab.Navigator>
           <Tab.Screen name="타이머" component={Home} />
-          <Tab.Screen name="설정" component={Settings} />
+          {/* <Tab.Screen name="설정" component={Settings} /> */}
         </Tab.Navigator>
       </NavigationContainer>
     </Provider>

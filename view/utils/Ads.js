@@ -12,7 +12,7 @@ const androidBannerId = 'ca-app-pub-7110380136138831/6154226410';
 
 export const BottomBannerAds = adBannerUnitId => (
   <BannerAd
-    unitId={testBannerId}
+    unitId={iosBannerId}
     size={BannerAdSize.FULL_BANNER}
     requestOptions={{
       requestNonPersonalizedAdsOnly: true,

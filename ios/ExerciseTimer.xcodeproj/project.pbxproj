@@ -14,8 +14,8 @@
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
 		B6562E5772D273916192F64B /* libPods-ExerciseTimer-ExerciseTimerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 50655240C2F5757898541252 /* libPods-ExerciseTimer-ExerciseTimerTests.a */; };
 		BFF564EF20A214D6682A8E30 /* libPods-ExerciseTimer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 02BCD820E81B9AE0AD3F50BB /* libPods-ExerciseTimer.a */; };
-		D3A41D2C2663397000AA59DE /* beepbeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3A41D2B2663397000AA59DE /* beepbeep.mp3 */; };
-		D3A41D6B266C7DBC00AA59DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3A41D6A266C7DBC00AA59DE /* GoogleService-Info.plist */; };
+		D3A41F19266C95A700AA59DE /* beepbeep.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = D3A41F18266C95A700AA59DE /* beepbeep.mp3 */; };
+		D3A41F1F266C96E800AA59DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3A41F1E266C96E700AA59DE /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,8 +44,8 @@
 		50655240C2F5757898541252 /* libPods-ExerciseTimer-ExerciseTimerTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-ExerciseTimer-ExerciseTimerTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		700E2CCFE10F6D4EF05CCECC /* Pods-ExerciseTimer-ExerciseTimerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExerciseTimer-ExerciseTimerTests.release.xcconfig"; path = "Target Support Files/Pods-ExerciseTimer-ExerciseTimerTests/Pods-ExerciseTimer-ExerciseTimerTests.release.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = ExerciseTimer/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		D3A41D2B2663397000AA59DE /* beepbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beepbeep.mp3; path = ../../assets/beepbeep.mp3; sourceTree = "<group>"; };
-		D3A41D6A266C7DBC00AA59DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D3A41F18266C95A700AA59DE /* beepbeep.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = beepbeep.mp3; path = ../../assets/beepbeep.mp3; sourceTree = "<group>"; };
+		D3A41F1E266C96E700AA59DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DD96791F974FA7F2272384AA /* Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig"; path = "Target Support Files/Pods-ExerciseTimer-ExerciseTimerTests/Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -90,7 +90,7 @@
 		13B07FAE1A68108700A75B9A /* ExerciseTimer */ = {
 			isa = PBXGroup;
 			children = (
-				D3A41D6A266C7DBC00AA59DE /* GoogleService-Info.plist */,
+				D3A41F1E266C96E700AA59DE /* GoogleService-Info.plist */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
@@ -157,7 +157,7 @@
 		D3A41D262663385800AA59DE /* Sound */ = {
 			isa = PBXGroup;
 			children = (
-				D3A41D2B2663397000AA59DE /* beepbeep.mp3 */,
+				D3A41F18266C95A700AA59DE /* beepbeep.mp3 */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -258,8 +258,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
-				D3A41D6B266C7DBC00AA59DE /* GoogleService-Info.plist in Resources */,
-				D3A41D2C2663397000AA59DE /* beepbeep.mp3 in Resources */,
+				D3A41F1F266C96E800AA59DE /* GoogleService-Info.plist in Resources */,
+				D3A41F19266C95A700AA59DE /* beepbeep.mp3 in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -461,6 +461,7 @@
 			baseConfigurationReference = DD96791F974FA7F2272384AA /* Pods-ExerciseTimer-ExerciseTimerTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = FNR6P532UM;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
@@ -513,8 +514,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9MCDSY5262;
+				DEVELOPMENT_TEAM = FNR6P532UM;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = ExerciseTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -527,8 +530,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.limfull.ExerciseTimer;
+				PRODUCT_BUNDLE_IDENTIFIER = com.StrongLift.ExerciseTimer;
 				PRODUCT_NAME = ExerciseTimer;
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -542,7 +546,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 9MCDSY5262;
+				DEVELOPMENT_TEAM = FNR6P532UM;
 				INFOPLIST_FILE = ExerciseTimer/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = (

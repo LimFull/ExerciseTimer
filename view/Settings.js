@@ -47,7 +47,7 @@ const Settings = () => {
         <View style={{flexDirection: 'row', alignItems: 'center'}}>
           <TextInput
             maxLength={2}
-            keyboardType={'decimal-pad'}
+            keyboardType={'numeric'}
             style={{
               width: 50,
               height: 50,

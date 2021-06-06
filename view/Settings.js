@@ -10,6 +10,7 @@ import {setTimes} from '@store';
 import {useSelector, useDispatch, connect} from 'react-redux';
 import {sensitiveHeaders} from '../node_modules_back/@types/node/http2.d';
 import {BottomBannerAds} from './utils/Ads';
+import {setData} from './utils/Storage';
 
 const Settings = () => {
   const state = useSelector(state => state);
@@ -27,12 +28,14 @@ const Settings = () => {
     const m = time * 60000;
     const s = getSecond(state[target]);
     dispatch(setTimes({[target]: m + s}));
+    setData(target, m + s);
   };
 
   const setSecond = (target, time) => {
     const m = getMinute(state[target]) * 60000;
     const s = time * 1000;
     dispatch(setTimes({[target]: m + s}));
+    setData(target, m + s);
   };
 
   const renderInput = (text, time, target, defaultValue) => {

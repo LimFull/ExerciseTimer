@@ -1,4 +1,4 @@
-import React, {Component, useState, useRef} from 'react';
+import React, {Component, useState, useRef, useEffect} from 'react';
 import {
   View,
   Text,
@@ -15,6 +15,8 @@ import SetTimeButton from '@components/SetTimeButton';
 import {getFormattedTime, getStringTime} from './utils';
 
 import {BottomBannerAds} from './utils/Ads';
+import {getData} from './utils/Storage';
+import {setTimes} from '@store';
 
 let interval;
 let pausedCurrentLeft = 0;
@@ -31,6 +33,26 @@ const Home = () => {
   const textInput = useRef();
 
   const {firstTime, secondTime, thirdTime} = useSelector(state => state);
+  const dispatch = useDispatch();
+
+  const getSetData = async () => {
+    const asyncFirstTime = await getData('firstTime');
+    const asyncSecondTime = await getData('secondTime');
+    const asyncThirdTime = await getData('thirdTime');
+    if (asyncFirstTime) {
+      dispatch(setTimes({firstTime: asyncFirstTime}));
+    }
+    if (asyncSecondTime) {
+      dispatch(setTimes({secondtime: asyncSecondTime}));
+    }
+    if (asyncThirdTime) {
+      dispatch(setTimes({thirdTime: asyncThirdTime}));
+    }
+  };
+
+  useEffect(() => {
+    getSetData();
+  }, []);
 
   const addRep = () => {
     setCurrentRep(currentRep + 1);

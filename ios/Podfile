@@ -13,6 +13,9 @@ target 'ExerciseTimer' do
   )
 
   pod 'RNSound', :path => '../node_modules/react-native-sound'
+  pod 'Firebase/Analytics'
+  pod 'Firebase/AdMob'
+  pod 'Google-Mobile-Ads-SDK'
 
   target 'ExerciseTimerTests' do
     inherit! :complete

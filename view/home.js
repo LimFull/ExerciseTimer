@@ -41,6 +41,7 @@ const Home = () => {
     const asyncThirdTime = await getData('thirdTime');
     if (asyncFirstTime) {
       dispatch(setTimes({firstTime: asyncFirstTime}));
+      setDefaultTime(asyncFirstTime);
     }
     if (asyncSecondTime) {
       dispatch(setTimes({secondtime: asyncSecondTime}));

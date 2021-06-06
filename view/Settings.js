@@ -9,6 +9,7 @@ import {
 import {setTimes} from '@store';
 import {useSelector, useDispatch, connect} from 'react-redux';
 import {sensitiveHeaders} from '../node_modules_back/@types/node/http2.d';
+import {BottomBannerAds} from './utils/Ads';
 
 const Settings = () => {
   const state = useSelector(state => state);
@@ -89,6 +90,9 @@ const Settings = () => {
       {renderInput('1번 휴식 시간', firstTime, 'firstTime', {m: 1, s: 30})}
       {renderInput('2번 휴식 시간', secondTime, 'secondTime', {m: 3, s: 0})}
       {renderInput('3번 휴식 시간', thirdTime, 'thirdTime', {m: 5, s: 0})}
+      <View style={{position: 'absolute', bottom: 0}}>
+        <BottomBannerAds />
+      </View>
     </View>
   );
 };
